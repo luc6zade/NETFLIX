@@ -2,56 +2,14 @@
     margin: 0;
     box-sizing: border-box;
 }
-  
+ 
 body {
     font-family: "poppins";
     background-color: #111;
 }
 
-.pelicula-principal .boton {
-	background: rgba(0,0,0, 0.5);
-	border: none;
-	border-radius: 0.31em;
-	padding: 0.93em 1.87em;
-	color: #fff;
-	margin-right: 1.25em;
-	cursor: pointer;
-	transition: .3s ease all;
-	font-size: 1.12em;
-  margin-top: 70px;
-  margin-bottom: 700px;
-}
-
-.pelicula-principal .boton:hover {
-	background: #fff;
-	color: #000;
-}
-
-.pelicula-principal .boton i {
-	margin-right: 1.25em;
-}
-
-.contenedor-titulo-controles .indicadores button {
-	background: #fff;
-	height: 3px;
-	width: 10px;
-	cursor: pointer;
-	border: none;
-	margin-right: 2px;
-}
-
-.contenedor-titulo-controles .indicadores button:hover,
-.contenedor-titulo-controles .indicadores button.activo {
-	background: red;
-}
-
-
-
-
-
-
+  
 .poster {
-    width: 100%;
     object-fit: contain;
     max-height: 260px;
     margin-right: 10px;
@@ -60,9 +18,12 @@ body {
   
 .posters {
     display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
     padding: 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
   
 .poster:hover {
@@ -82,42 +43,78 @@ body {
 }
   
 .poster_fila {
-    color: white;
-    margin-left: 12px;
-}
-  
-/* pelicula sugerida */
-/* {
-    background-image: url("intensamente.jpg");
-    background-size: cover;
-    background-position: center center;
     color: rgb(255, 255, 255);
-    object-fit: contain;
-    height: 448px;
-}*/
+    margin-right: 2px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: scroll;
+    white-space: nowrap;
+    padding: 2px 0;
+    background-color: #000; /* Opcional: para mejor visibilidad del contenido */
+}
 
+.poster_fila img {
+    display: inline-block; /* Mantén las imágenes en una fila horizontal */
+    margin-right: 10px; /* Ajusta la distancia entre las imágenes */
+    height: auto; /* Mantén la proporción de la imagen */
+    max-height: 200px; /* Ajusta según sea necesario */
+}
+
+  
+/* pelicula principal */
+.pelicula-principal .boton {
+    background: rgba(0,0,0, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #fff;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+  margin-top: 70px;
+  margin-bottom: 700px;
+}
+
+
+.pelicula-principal .boton:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+.pelicula-principal .boton i {
+    margin-right: 1.25em;
+}
+
+
+.contenedor-titulo-controles .indicadores button {
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+    background: red;
+}
 .pelicula-principal{
-  background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url("intensamente.jpg");
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url("intensamente.jpeg");
   background-position: center center;
   color: rgb(255, 255, 255);
   object-fit: contain;
   height: 448px;
   font-size: 16px;
-	min-height: 40.62em;
-	margin-bottom: 3.12em;
-	display: flex;
-	align-items: end;
+  min-height: 40.62em;
+  display: flex;
+  align-items: end;
 }
 
-  /*background-image: url("intensamente.jpg"),linear-gradient(-25deg, rgb(0 0 0 / 0), rgb(0 0 0 / 1) 50%);
-  background-size: cover;
-  background-position: center center;
-  background-blend-mode: multiply;
-  color: white;
-  object-fit: contain;
-  height:448px;
-}*/
 
 .contenido {
   margin-left: 30px;
@@ -126,11 +123,13 @@ body {
   height: 100px;
 }
 
+
 .titulo {
   font-size: 5rem;
   font-weight: 800;
   padding-bottom: 1px;
 }
+
 
 .descripcion {
   width: 37rem;
@@ -140,43 +139,6 @@ body {
   font-size: 13px;
   height: 100px;
 }
-
-/*.pelicula-principal .contenedor {
-	margin: 0 auto;
-	margin-bottom: 6.25em;
-}
-
-.pelicula-principal .titulo {
-	font-weight: 900;
-	font-size: 3.12em;
-	margin-bottom: 0.4em;
-}
-
-.pelicula-principal .descripcion {
-	font-weight: normal;
-	font-size: 1em;
-	line-height: 1.75em;
-	max-width: 50%;
-	margin-bottom: 1.25em;
-}/*
-
-/*.titulo {
-font-size: 3rem;
-font-weight: 800;
-padding-bottom: 100%;
-padding-top: 0px ;
-position:static;
-}
-  
-.descripcion {
-    width: 45rem;
-    line-height: 1.3;
-    padding-top: 1rem;
-    font-size: 15px;
-    max-width: 360px;
-    height: 180px;
-}*/
-  
 .play {
   cursor: pointer;
   color: #fff;
@@ -192,27 +154,30 @@ position:static;
   background-color: rgba(0, 0, 0, 0);
 }
 
+
 .play:hover {
   color: #000;
   background-color: #1818188f;
   transition: all 0.2s;
 }
 
+
 .click {
   margin-top: 145px;
   height: 7.4rem;
-  
+ 
 }
 
-
-
- 
-  
 .logo {
     width:100px;
     object-fit: contain;
 }
-
+  
+.smile {
+    width: 30px;
+    object-fit: contain;
+    margin-left: 10px;
+}
   
 .nav {
     position:relative;
@@ -307,9 +272,3 @@ padding-right: 10px;
 color:#fff;
 border-right: 1px solid #fff;
 }
-
-:root {
-	--rojo: #E50914;
-	--fondo: #141414;
-}
-
